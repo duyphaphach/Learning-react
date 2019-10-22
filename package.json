@@ -1,44 +1,41 @@
 {
-  "name": "react-webpack-kit",
+  "name": "react-start",
   "version": "1.0.0",
-  "description": "a boiler plate for creating react applications bundled by webpack",
-  "main": "src/js/app.js",
-  "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
-    "build": "./node_modules/.bin/webpack --config webpack.config.dev.js",
-    "build:production": "./node_modules/.bin/webpack --config webpack.config.production.js",
-    "start": "./node_modules/.bin/webpack-dev-server --config webpack.config.production.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "homepage": "https://github.com/temilaj/react-webpack-starter",
-  "repository": "https://github.com/temilaj/react-webpack-starter.git",
-  "keywords": [
-    "react",
-    "webpack",
-    "react sample",
-    "react starter",
-    "react boilerplate"
-  ],
-  "author": "Temi Lajumoke <temi@temilajumoke.com> (http://temilajumoke.com)",
+  "main": "index.js",
+  "repository": "git@github.com:duyphaphach/Learning-react.git",
+  "author": "duyphaphach <duyphamle97@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "build:dev": "webpack -d --mode development",
+    "build:prod": "webpack -p --mode production",
+    "dev": "webpack-dev-server --hot --mode development"
+  },
   "dependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-hot-loader": "^4.12.15"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-react-hmre": "^1.1.1",
-    "css-loader": "^0.28.9",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "node-sass": "^4.7.2",
-    "react-hot-loader": "^3.1.3",
-    "sass-loader": "^6.0.6",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1",
-    "webpack-merge": "^4.1.1"
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@hot-loader/react-dom": "^16.10.2",
+    "autoprefixer": "^9.6.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
   }
 }
