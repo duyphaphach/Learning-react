@@ -1,10 +1,20 @@
 import React from "react";
 import { hot } from 'react-hot-loader/root';
+import Posts from './scripts/components/Posts';
+import PostForm from './scripts/components/PostForm';
+
 
 class App extends React.Component {
   render() {
-    const { name } = this.props;
-    return <h1>Hello {name}</h1>;
+    return (
+      <Provider store={store}>
+        <div className='App'>
+          <PostForm />
+          <br/>
+          <Posts />
+        </div>
+      </Provider>
+    )
   }
 }
 
