@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import PropTypes from 'prop-types';
+import {newPost} from './../actions/postFormAction';
 
 class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: '',
-      content: ''
+      body: ''
     };
 
     this.titleChange = this.titleChange.bind(this);
@@ -21,27 +24,18 @@ class PostForm extends Component {
 
   contentChange(e) {
     this.setState({
-      content: e.target.value
+      body: e.target.value
     });
   }
 
   submitPost(e) {
     e.preventDefault();
-
-    const post = {
-      title: this.state.title,
-      content: this.state.content
-    };
-
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'applicattion/json'
-      },
-      body: JSON.stringify(post)
+    const {title, body} = this.state;
+    this.props.newPost({
+      title: title,
+      body: body,
+      userId: 106
     })
-      .then(res => res.json())
-      .then(data => console.log(data))
   }
 
   render() {
@@ -50,11 +44,11 @@ class PostForm extends Component {
         <h1 className="title">Post Form</h1>
         <form className="form">
           <label>Post Name</label><br/>
-          <input name='title' type="text" value={this.state.title} onChange={this.titleChange}/>
+          <input name='title' type="text" value={this.props.title} onChange={this.titleChange}/>
           <br/>
           <br/>
           <label>Post Content</label><br/>
-          <textarea name='content' value={this.state.content} onChange={this.contentChange}/>
+          <textarea name='content' value={this.props.body} onChange={this.contentChange}/>
           <br/>
           <br/>
           <button className='submit' onClick={this.submitPost}>Submit</button>
@@ -64,4 +58,8 @@ class PostForm extends Component {
   }
 }
 
-export default PostForm;
+PostForm.propTypes = {
+  newPost: PropTypes.func.isRequired
+};
+
+export default connect(null ,{newPost})(PostForm);
