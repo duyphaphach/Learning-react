@@ -1,7 +1,7 @@
 import React from "react";
 import { hot } from 'react-hot-loader/root';
-import Posts from './scripts/components/Posts';
-import PostForm from './scripts/components/PostForm';
+import Posts from './scripts/modules/Posts';
+import PostForm from './scripts/modules/PostForm';
 import {Provider} from 'react-redux';
 import store from './store';
 

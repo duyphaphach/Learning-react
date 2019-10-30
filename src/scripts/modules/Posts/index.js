@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {fetchPost} from "../actions/postActions";
+import {fetchPost} from "./actions";
 
 class Posts extends Component {
-
   // Run before component get inject to DOM tree
   componentWillMount() {
     this.props.fetchPost();

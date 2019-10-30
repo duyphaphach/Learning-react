@@ -1,16 +1,17 @@
-import { FETCH_POSTS } from "../actions/types";
+import {NEW_POSTS} from "../constants/action-types";
 
+//Manage newPost slice of state
 const initialState = {
- // Posts to be fetched
-  items: [],
+  // Single post to add
+  item: {}
 };
 
 export default function (state=initialState, action) {
   switch (action.type) {
-    case FETCH_POSTS:
+    case NEW_POSTS:
       return {
         ...state,
-        items: action.payload
+        item: action.payload
       };
 
     default:

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./src/app";
-import "./src/styles/styles.less";
+import App from "./app";
+import "./styles/styles.less";
 
 
 const root = document.getElementById("root");

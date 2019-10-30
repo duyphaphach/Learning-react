@@ -1,14 +1,19 @@
 const webpack = require('webpack');
-const path = require('path');
+const {resolve} = require('path');
+
+const BUILD_DIR = resolve('build');
+const APP_DIR = resolve('src');
+const PUBLIC_DIR = resolve('public');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   entry: [
     'react-hot-loader/patch',
-    './index.js'
+    `${APP_DIR}/index.js`
   ],
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: BUILD_DIR,
     filename: 'main.[hash].js',
   },
   module: {
@@ -59,8 +64,8 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Learn react',
-      filename: 'index.html',
-      template: './index.html',
+      filename: `${BUILD_DIR}/index.html`,
+      template: `${BUILD_DIR}/index.html`,
     })
   ],
   resolve: {

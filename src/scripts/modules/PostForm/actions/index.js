@@ -1,4 +1,4 @@
-import {NEW_POSTS} from "./types";
+import {NEW_POSTS} from "./../constants/action-types";
 
 export const newPost = ({title, body, userId}) => (dispatch) => {
   fetch('https://jsonplaceholder.typicode.com/posts', {
