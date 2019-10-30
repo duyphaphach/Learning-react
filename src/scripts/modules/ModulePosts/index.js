@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {fetchPost} from "./actions";
 
-class Posts extends Component {
+class ModulePosts extends Component {
   // Run before component get inject to DOM tree
   componentWillMount() {
     this.props.fetchPost();
@@ -11,18 +11,18 @@ class Posts extends Component {
 
   componentWillReceiveProps(nextProps, nextContext) {
     if (nextProps.newPost) {
-      this.props.posts.unshift(nextProps.newPost);
+      this.props.ModulePosts.unshift(nextProps.newPost);
     }
   }
 
   render() {
-    const posts = this.props.posts;
+    const ModulePosts = this.props.ModulePosts;
     return (
-      <div className="posts">
+      <div className="ModulePosts">
         <h1 className="title">Post List</h1>
-        <ul className='posts'>
+        <ul className='ModulePosts'>
           {
-            posts.map((post, key) => {
+            ModulePosts.map((post, key) => {
               return (
                 <li key={post.id}>
                   <div className="title">{post.title}</div>
@@ -38,17 +38,17 @@ class Posts extends Component {
   }
 }
 
-Posts.propTypes = {
+ModulePosts.propTypes = {
   fetchPost: PropTypes.func.isRequired,
-  posts: PropTypes.array.isRequired,
+  ModulePosts: PropTypes.array.isRequired,
   newPost: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  posts: state.posts.items,
+  ModulePosts: state.ModulePosts.items,
   newPost: state.newPost.item
 });
 
-export default connect(mapStateToProps, {fetchPost})(Posts);
+export default connect(mapStateToProps, {fetchPost})(ModulePosts);
 
 

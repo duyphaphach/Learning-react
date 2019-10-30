@@ -6,6 +6,7 @@ const APP_DIR = resolve('src');
 const PUBLIC_DIR = resolve('public');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
   entry: [
@@ -14,7 +15,7 @@ const config = {
   ],
   output: {
     path: BUILD_DIR,
-    filename: 'main.[hash].js',
+    filename: '[name].[hash].js',
   },
   module: {
     rules: [
@@ -62,10 +63,11 @@ const config = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Learn react',
       filename: `${BUILD_DIR}/index.html`,
-      template: `${BUILD_DIR}/index.html`,
+      template: `${PUBLIC_DIR}/index.html`,
     })
   ],
   resolve: {
@@ -78,7 +80,8 @@ const config = {
     }
   },
   devServer: {
-    contentBase: './build'
+    contentBase: './build',
+    historyApiFallback: true
   }
 };
 

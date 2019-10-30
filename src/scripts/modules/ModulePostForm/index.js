@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import PropTypes from 'prop-types';
 import {newPost} from './actions';
 
-class PostForm extends Component {
+class ModulePostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,8 +58,8 @@ class PostForm extends Component {
   }
 }
 
-PostForm.propTypes = {
+ModulePostForm.propTypes = {
   newPost: PropTypes.func.isRequired
 };
 
-export default connect(null ,{newPost})(PostForm);
+export default connect(null ,{newPost})(ModulePostForm);
