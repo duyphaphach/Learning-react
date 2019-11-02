@@ -6,6 +6,7 @@ import Navbar from "./pages/Navbar";
 import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
+import PostDetail from "./pages/PostDetail";
 
 // React Router
 import {
@@ -25,9 +26,12 @@ class App extends React.Component {
         <Router>
           <div className='App'>
             <Navbar />
-            <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
-            <Route path='/login' component={Login} />
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/about' component={About} />
+              <Route path='/login' component={Login} />
+              <Route path='/post/:id' component={PostDetail} />
+            </Switch>
           </div>
         </Router>
       </Provider>

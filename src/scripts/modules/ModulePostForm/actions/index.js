@@ -1,7 +1,7 @@
-import {NEW_ModulePosts} from "./../constants/action-types";
+import {NEW_POST} from "./../constants/action-types";
 
 export const newPost = ({title, body, userId}) => (dispatch) => {
-  fetch('https://jsonplaceholder.typicode.com/ModulePosts', {
+  fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
       title: title,
@@ -13,8 +13,8 @@ export const newPost = ({title, body, userId}) => (dispatch) => {
     }
   })
     .then(response => response.json(), error => console.log(error))
-    .then( (newPost) => dispatch({
-      type: NEW_ModulePosts,
+    .then((newPost) => dispatch({
+      type: NEW_POST,
       payload: newPost
     }), error => console.log(error))
 };

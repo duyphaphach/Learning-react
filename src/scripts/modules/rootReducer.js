@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import postReducer from './ModulePosts/reducers';
+import ModulePostsReducer from './ModulePosts/reducers';
 import ModulePostFormReducer from './ModulePostForm/reducers';
 
 export default combineReducers({
-  ModulePosts: postReducer,
+  posts: ModulePostsReducer,
   newPost: ModulePostFormReducer
 })
