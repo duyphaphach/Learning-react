@@ -7,9 +7,9 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm dist/bundle.js",
-    "build:dev": "webpack -d --mode development",
-    "build:prod": "webpack -p --mode production",
-    "dev": "webpack-dev-server --hot --mode development"
+    "build:dev": "webpack -d --mode development --history-api-fallback",
+    "build:prod": "webpack -p --mode production --history-api-fallback",
+    "dev": "webpack-dev-server --hot --mode development --history-api-fallback"
   },
   "dependencies": {
     "axios": "^0.19.0",

@@ -26,13 +26,14 @@ class ModulePosts extends Component {
             posts.map((post, key) => {
               return (
                 <li key={post.id}>
-                  <Link to={`/post/${post.id}`}><div className="title">{post.title}</div></Link>
+                  <Link to={`/post/${post.id}`}>
+                    <div className="title">{post.title}</div>
+                  </Link>
                   <div className="text">{post.body}</div>
                 </li>
               )
             })
           }
-          <div className="title">{}</div>
         </ul>
       </div>
     );
@@ -50,7 +51,6 @@ const mapStateToProps = state => ({
   newPost: state.newPost.item
 });
 
-
-export default connect(mapStateToProps, {fetchPost})(ModulePosts);
+export default connect(mapStateToProps, {fetchPost})(ModulePosts)
 
 

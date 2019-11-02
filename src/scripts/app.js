@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { hot } from 'react-hot-loader/root';
 
 // Modules
-import Navbar from "./pages/Navbar";
+import Navbar from './pages/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
-import PostDetail from "./pages/PostDetail";
+import PostDetail from './pages/PostDetail';
 
 // React Router
 import {
